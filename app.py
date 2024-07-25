@@ -10,7 +10,10 @@ def index(number):
     <!DOCTYPE html>
     <html>
     <head>
-        <meta property="og:image" content="{{ url_for('og_image', number=number) }}">
+        <title>OG test {{number}}ms</title>
+        <meta property="og:title" content="OG test {{number}}ms" />
+        <meta property="og:image" itemprop="image" content="{{ url_for('og_image', number=number) }}">
+        <meta property="og:description" content="OG image was loaded in {{number}}ms" />
     </head>
     <body>
         <h1>OG image loading should take {{number}} ms</h1>
